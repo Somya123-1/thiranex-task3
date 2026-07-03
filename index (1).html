@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thiranex Task 3</title>
+  <style>
+    body { font-family: Arial; background: #1e1e2e; color: white; text-align: center; padding: 50px; }
+    .box { background: #2d2d44; padding: 30px; border-radius: 10px; }
+    input { padding: 10px; width: 200px; }
+    button { padding: 10px 20px; background: green; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Thiranex To-Do List ✅</h1>
+    <input type="text" id="task" placeholder="Add task...">
+    <button onclick="add()">Add</button>
+    <ul id="list"></ul>
+  </div>
+  <script>
+    function add() {
+      let val = document.getElementById('task').value;
+      if(val=='') return;
+      let li = document.createElement('li');
+      li.innerHTML = val + ' <button onclick="this.parentElement.remove()">❌</button>';
+      document.getElementById('list').appendChild(li);
+      document.getElementById('task').value = '';
+    }
+  </script>
+</body>
+</html>
